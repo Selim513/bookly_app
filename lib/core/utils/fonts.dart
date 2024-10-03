@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextStyle getTitleStyle({
-  FontWeight fontweight = FontWeight.w600,
+  FontWeight fontweight = FontWeight.bold,
   double fontsize = 20,
 }) {
-  return GoogleFonts.poppins(
+  return GoogleFonts.spectral(
     fontWeight: fontweight,
     fontSize: fontsize,
   );

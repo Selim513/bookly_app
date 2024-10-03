@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+
+import 'custom_book_image.dart';
 
 class CustomHorizintalListView extends StatelessWidget {
   const CustomHorizintalListView({
@@ -8,19 +9,15 @@ class CustomHorizintalListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        return Row( 
-          children: [
-            SizedBox(
-              height: 300,
-              child: Image.asset('assets/test_image.png'),
-            ),
-          ],
-        );
-      },
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.3,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 5,
+        itemBuilder: (context, index) {
+          return const CustomBookImage();
+        },
+      ),
     );
   }
 }

@@ -8,17 +8,27 @@ class CustomRateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-        text: TextSpan(children: [
-      TextSpan(
-        text: '4.8',
-        style: getTitleStyle(fontsize: 15),
-      ),
-      const TextSpan(text: ' '),
-      TextSpan(
-        text: '(225)',
-        style: getGreyTextStyle(),
-      )
-    ]));
+    return Row(
+      children: [
+        IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.star,
+              color: Colors.yellow,
+            )),
+        RichText(
+            text: TextSpan(children: [
+          TextSpan(
+            text: '4.8',
+            style: getTitleStyle(fontsize: 15),
+          ),
+          const TextSpan(text: ' '),
+          TextSpan(
+            text: '(225)',
+            style: getGreyTextStyle(),
+          )
+        ])),
+      ],
+    );
   }
 }

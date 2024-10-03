@@ -3,8 +3,8 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_rate_
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class BestSellerCard extends StatelessWidget {
-  const BestSellerCard({
+class BookDetailsListViewItem extends StatelessWidget {
+  const BookDetailsListViewItem({
     super.key,
   });
 
@@ -12,40 +12,49 @@ class BestSellerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(width: 120, child: Image.asset('assets/test_image.png')),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Gap(10),
-                Text('The Jungl Book', style: getTitleStyle()),
-                const Gap(5),
-                Text(
-                  'Rudyad Kipling',
-                  style: getGreyTextStyle(),
-                ),
-                const Gap(10),
-                Row(
+        SizedBox(
+          height: 150,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AspectRatio(
+                  aspectRatio: 2.7 / 3,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/test_image.png'))),
+                  )),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '19.99 €',
-                      style: getPriceTextStyle(),
+                    const Gap(10),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .6,
+                      child: Text('The Jungl Book Book ',
+                          maxLines: 2, style: getTitleStyle()),
                     ),
-                    const Gap(30),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.star,
-                          color: Colors.yellow,
-                        )),
-                    const CustomRateWidget()
+                    const Gap(5),
+                    Text(
+                      'Rudyad Kipling',
+                      style: getGreyTextStyle(),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '19.99 €',
+                          style: getPriceTextStyle(),
+                        ),
+                        const Spacer(),
+                        const CustomRateWidget(),
+                        const Gap(10),
+                      ],
+                    )
                   ],
-                )
-              ],
-            ),
-          ],
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );

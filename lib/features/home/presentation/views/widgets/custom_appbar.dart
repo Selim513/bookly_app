@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/function/route.dart';
+import 'package:bookly_app/features/search/presentation/views/search_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +14,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         width: 90,
       ),
       actions: [
-        IconButton(onPressed: () {}, icon: const Icon(CupertinoIcons.search))
+        IconButton(
+            onPressed: () {
+              gotoPush(context, const SearchView());
+            },
+            icon: const Icon(CupertinoIcons.search))
       ],
     );
   }
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
 }

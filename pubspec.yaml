@@ -8,6 +8,8 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.8
+  dio: ^5.7.0
+  either_dart: ^1.0.0
   flutter:
     sdk: flutter
   gap: ^3.0.1

@@ -1,4 +1,4 @@
 abstract class HomeRepo {
   fetchFeaturedBooks();
-  fetchBooksDetails();
+  fetchBestSellerBooks();
 }

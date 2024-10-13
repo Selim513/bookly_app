@@ -12,6 +12,8 @@ dependencies:
   either_dart: ^1.0.0
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
+  flutter_getit: ^3.0.1
   gap: ^3.0.1
   google_fonts: ^6.2.1
 

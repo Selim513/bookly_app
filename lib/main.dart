@@ -1,9 +1,11 @@
+import 'package:bookly_app/core/utils/services_locator.dart';
 import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:bookly_app/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MainApp());
+  setup();
 }
 
 class MainApp extends StatelessWidget {

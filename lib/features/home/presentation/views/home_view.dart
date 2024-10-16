@@ -17,7 +17,8 @@ class HomeView extends StatelessWidget {
         appBar: const CustomAppBar(),
         body: MultiBlocProvider(providers: [
           BlocProvider(
-            create: (context) => FeatueredBooksCubit(getIt.get<HomeRepoImpl>()),
+            create: (context) => FeatueredBooksCubit(getIt.get<HomeRepoImpl>())
+              ..getFeaturedBooks(),
           ),
           BlocProvider(
             create: (context) => NewestBookCubit(getIt.get<HomeRepoImpl>()),

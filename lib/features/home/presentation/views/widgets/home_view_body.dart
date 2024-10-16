@@ -19,6 +19,7 @@ class HomeViewBody extends StatelessWidget {
               children: [
                 Gap(10),
                 CustomHorizintalListView(),
+                Gap(20),
                 Row(
                   children: [
                     Text(

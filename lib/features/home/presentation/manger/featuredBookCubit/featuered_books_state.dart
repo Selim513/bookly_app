@@ -9,7 +9,7 @@ class FeatueredBooksLoadingState extends FeatuerdBooksState {}
 class FeatueredBooksSuccessState extends FeatuerdBooksState {
   final List<BookModel> books;
 
-  FeatueredBooksSuccessState({required this.books});
+  FeatueredBooksSuccessState(this.books);
 }
 
 class FeatueredBooksFaluierState extends FeatuerdBooksState {

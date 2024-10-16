@@ -5,20 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class FeatueredBooksCubit extends Cubit<FeatuerdBooksState> {
   FeatueredBooksCubit(this.homeRepo) : super(FeatueredBooksInitialState());
   final HomeRepoImpl homeRepo;
-  Future<void> getFeatueredBooks() async {
-    emit(FeatueredBooksLoadingState());
-    var data = await homeRepo.fetchFeaturedBooks();
-    data.fold(
-      (failuer) =>
-          emit(FeatueredBooksFaluierState(errorMessage: failuer.errorMessage)),
-      (books) => emit(FeatueredBooksSuccessState(books: books)),
+  Future<void> getFeaturedBooks() async {
+    var result = await homeRepo.fetchFeaturedBooks();
+    result.fold(
+      (failure) =>
+          emit(FeatueredBooksFaluierState(errorMessage: failure.errorMessage)),
+      (books) => emit(FeatueredBooksSuccessState(books)),
     );
-    try {
-      homeRepo.fetchFeaturedBooks().then(
-        (value) {
-          emit(FeatueredBooksSuccessState(books: value.right));
-        },
-      );
-    } catch (e) {}
   }
 }

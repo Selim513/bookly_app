@@ -21,7 +21,9 @@ class CustomHorizintalListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const CustomBookImage();
+                return CustomBookImage(
+                    imageUrl: state
+                        .books[index].volumeInfo.imageLinks.smallThumbnail);
               },
             ),
           );
@@ -31,7 +33,7 @@ class CustomHorizintalListView extends StatelessWidget {
           );
         } else {
           return const Center(
-            child: Text('aaaaaaaaaaaaaaaa'),
+            child: CircularProgressIndicator(),
           );
         }
       },

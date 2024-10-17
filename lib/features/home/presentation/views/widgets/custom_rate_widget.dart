@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 class CustomRateWidget extends StatelessWidget {
   const CustomRateWidget({
     super.key,
+     this.avrageRating,
+     this.rateCount,
   });
-
+  final int? avrageRating;
+  final int? rateCount;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,12 +22,12 @@ class CustomRateWidget extends StatelessWidget {
         RichText(
             text: TextSpan(children: [
           TextSpan(
-            text: '4.8',
+            text: '$avrageRating',
             style: getTitleStyle(fontsize: 15),
           ),
           const TextSpan(text: ' '),
           TextSpan(
-            text: '(225)',
+            text: '($rateCount)',
             style: getGreyTextStyle(),
           )
         ])),

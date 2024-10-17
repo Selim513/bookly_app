@@ -17,6 +17,8 @@ class VolumeInfo {
   String? maturityRating;
   bool? allowAnonLogging;
   String? contentVersion;
+  int? averageRating;
+  int? ratingsCount;
   PanelizationSummary? panelizationSummary;
   ImageLinks imageLinks;
   String? language;
@@ -29,6 +31,8 @@ class VolumeInfo {
     this.authors,
     this.publisher,
     this.publishedDate,
+    this.averageRating,
+    this.ratingsCount,
     this.description,
     this.industryIdentifiers,
     this.readingModes,
@@ -61,6 +65,8 @@ class VolumeInfo {
                 json['readingModes'] as Map<String, dynamic>),
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
+        averageRating: json['averageRating'] as int?,
+        ratingsCount: json['ratingsCount'] as int?,
         categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
         maturityRating: json['maturityRating'] as String?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,

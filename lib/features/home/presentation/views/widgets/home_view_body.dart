@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_widget.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/newet_books_widget.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_horizintal_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -34,7 +34,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         SliverFillRemaining(
-          child: BestSellerListView(),
+          child: NewestBooksListView(),
         ),
       ],
     );

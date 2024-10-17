@@ -1,5 +1,4 @@
 import 'package:bookly_app/core/utils/fonts.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_rate_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -32,7 +31,7 @@ class BookDetailsBody extends StatelessWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomRateWidget(),
+                // CustomRateWidget(),
               ],
             ),
             const Gap(10),

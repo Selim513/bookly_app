@@ -23,7 +23,7 @@ class CustomPreviewButton extends StatelessWidget {
                   bottomLeft: Radius.circular(20)),
             ),
             child: Text(
-              '19.99 €',
+              'Free',
               style: getPriceTextStyle(color: Colors.black),
             ),
           ),

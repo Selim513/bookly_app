@@ -23,8 +23,9 @@ class CustomHorizintalListView extends StatelessWidget {
               itemCount: state.books.length,
               itemBuilder: (context, index) {
                 return CustomBookImage(
-                    imageUrl: state
-                        .books[index].volumeInfo.imageLinks.smallThumbnail);
+                    imageUrl: state.books[index].volumeInfo.imageLinks
+                            ?.smallThumbnail ??
+                        '');
               },
             ),
           );

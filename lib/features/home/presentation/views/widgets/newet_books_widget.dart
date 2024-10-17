@@ -22,7 +22,11 @@ class NewestBooksListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                   onTap: () {
-                    gotoPush(context, const BookDetailsView());
+                    gotoPush(
+                        context,
+                        BookDetailsView(
+                          books: state.books[index],
+                        ));
                   },
                   child: BookDetailsListViewItem(
                     books: state.books[index],

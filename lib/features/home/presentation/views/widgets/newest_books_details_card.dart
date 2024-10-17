@@ -24,7 +24,8 @@ class BookDetailsListViewItem extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomBookImage(imageUrl: booksDetails.imageLinks.thumbnail),
+                CustomBookImage(
+                    imageUrl: booksDetails.imageLinks?.thumbnail ?? ''),
                 const Gap(10),
                 Expanded(
                   child: Column(
@@ -34,25 +35,26 @@ class BookDetailsListViewItem extends StatelessWidget {
                       SizedBox(
                         width: MediaQuery.of(context).size.width * .6,
                         child: Text("${booksDetails.title}",
-                            maxLines: 2, style: getTitleStyle()),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            style: getTitleStyle()),
                       ),
                       const Gap(5),
                       Text(
-                        '${booksDetails.authors}',
+                        booksDetails.authors![0],
                         maxLines: 1,
                         style: getGreyTextStyle(),
                       ),
                       Row(
                         children: [
-                          if (books.saleInfo?.saleability == 'NOT_FOR_SALE')
-                            Text(
-                              'Free',
-                              style: getPriceTextStyle(),
-                            ),
+                          Text(
+                            'Free',
+                            style: getPriceTextStyle(),
+                          ),
                           const Spacer(),
                           CustomRateWidget(
-                            avrageRating: booksDetails.averageRating,
-                            rateCount: booksDetails.ratingsCount,
+                            avrageRating: booksDetails.averageRating ?? 0,
+                            rateCount: booksDetails.ratingsCount ?? 0,
                           ),
                           const Gap(10),
                         ],

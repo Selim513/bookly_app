@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/fonts.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -8,16 +9,22 @@ import 'custom_preview_button.dart';
 class BookDetailsBody extends StatelessWidget {
   const BookDetailsBody({
     super.key,
+    required this.books,
   });
+  final BookModel books;
 
   @override
   Widget build(BuildContext context) {
+    var booksDetails = books.volumeInfo;
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Center(
         child: Column(
           children: [
-            const CustomImagePerview(),
+            CustomImagePerview(
+              imageUrl: booksDetails.imageLinks?.thumbnail ?? '',
+            ),
+            const Gap(10),
             Text(
               'The Jungle Book',
               style: getTitleStyle(fontsize: 30, fontweight: FontWeight.w500),

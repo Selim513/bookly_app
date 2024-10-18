@@ -9,7 +9,7 @@ class SimilarBookLoadingState extends SimilarBookState {}
 class SimilarBookSuccessState extends SimilarBookState {
   final List<BookModel> books;
 
-  SimilarBookSuccessState({required this.books});
+  SimilarBookSuccessState(this.books);
 }
 
 class SimilarBookFailureState extends SimilarBookState {

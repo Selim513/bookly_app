@@ -1,6 +1,9 @@
 import 'package:bookly_app/core/function/route.dart';
+import 'package:bookly_app/core/utils/services_locator.dart';
+import 'package:bookly_app/features/home/data/repo/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presentation/manger/newestBookCubit/newest_book_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manger/newestBookCubit/newest_book_state.dart';
+import 'package:bookly_app/features/home/presentation/manger/similarBookCubit/similar_book_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_details_card.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +27,12 @@ class NewestBooksListView extends StatelessWidget {
                   onTap: () {
                     gotoPush(
                         context,
-                        BookDetailsView(
-                          books: state.books[index],
+                        BlocProvider(
+                          create: (context) =>
+                              SimilarBookCubit(getIt.get<HomeRepoImpl>()),
+                          child: BookDetailsView(
+                            books: state.books[index],
+                          ),
                         ));
                   },
                   child: BookDetailsListViewItem(

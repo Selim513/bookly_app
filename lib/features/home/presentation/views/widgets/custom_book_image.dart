@@ -21,7 +21,6 @@ class CustomBookImage extends StatelessWidget {
             placeholder: (context, url) =>
                 const Center(child: CircularProgressIndicator()),
             imageUrl: imageUrl,
-            
             fit: BoxFit.fill,
           ),
         ),

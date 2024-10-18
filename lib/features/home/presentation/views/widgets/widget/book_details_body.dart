@@ -26,8 +26,8 @@ class _BookDetailsBodyState extends State<BookDetailsBody> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<SimilarBookCubit>(context)
-        .fetchSimilarBooks(category: widget.books.volumeInfo.categories![0]);
+    BlocProvider.of<SimilarBookCubit>(context).fetchSimilarBooks(
+        category: widget.books.volumeInfo.categories?[0] ?? '');
   }
 
   @override
@@ -64,7 +64,9 @@ class _BookDetailsBodyState extends State<BookDetailsBody> {
               ],
             ),
             const Gap(10),
-            const CustomPreviewButton(),
+            CustomPreviewButton(
+              visitUrl: booksDetails.previewLink ?? '',
+            ),
             const Gap(20),
             Row(
               children: [

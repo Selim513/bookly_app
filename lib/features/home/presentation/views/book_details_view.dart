@@ -18,7 +18,7 @@ class BookDetailsView extends StatelessWidget {
       appBar: const CustomAppbarBookDetails(),
       body: BlocProvider(
         create: (context) => SimilarBookCubit(getIt.get<HomeRepoImpl>()
-          ..fetchSimilarBooks(category: books.volumeInfo.categories![0])),
+          ..fetchSimilarBooks(category: books.volumeInfo.categories?[0] ?? '')),
         child: BookDetailsBody(
           books: books,
         ),

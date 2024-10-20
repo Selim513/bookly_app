@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../../../core/utils/fonts.dart';
+import '../../../../../core/utils/fonts.dart';
 
 class CustomPreviewButton extends StatelessWidget {
   const CustomPreviewButton({

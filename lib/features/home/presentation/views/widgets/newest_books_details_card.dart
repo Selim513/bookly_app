@@ -41,7 +41,7 @@ class BookDetailsListViewItem extends StatelessWidget {
                       ),
                       const Gap(5),
                       Text(
-                        booksDetails.authors![0],
+                        booksDetails.authors?[0] ?? '',
                         maxLines: 1,
                         style: getGreyTextStyle(),
                       ),

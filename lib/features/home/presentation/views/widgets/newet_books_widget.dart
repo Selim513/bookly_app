@@ -20,6 +20,7 @@ class NewestBooksListView extends StatelessWidget {
       builder: (context, state) {
         if (state is NewestBookSuccessState) {
           return ListView.builder(
+            padding: EdgeInsets.zero,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: state.books.length,
             itemBuilder: (context, index) {

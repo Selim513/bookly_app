@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
-import '../custom_rate_widget.dart';
-import '../similar_books_listview.dart';
+import 'custom_rate_widget.dart';
+import 'similar_books_listview.dart';
 import 'cusotm_image_preview.dart';
 import 'custom_preview_button.dart';
 

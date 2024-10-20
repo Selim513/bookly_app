@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_appbar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_horizintal_listview.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/newet_books_widget.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class HomeViewBody extends StatelessWidget {
             padding: EdgeInsets.only(left: 20),
             child: Column(
               children: [
+                CustomAppBar(),
                 Gap(10),
                 CustomHorizintalListView(),
                 Gap(20),
